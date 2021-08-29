@@ -1,6 +1,6 @@
 # calculator
 
-Calculator mobile app.This is a gemel-fund calculator that shows the overall amonut of 
+Calculator mobile app. This is a gemel-fund calculator that shows the overall amonut of 
 money in the gamal fund. The calculator calculates with yield, management fee, 
 taxes and inflation (because the taxes are real taxes which take in count the inflation loss).
 
