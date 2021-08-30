@@ -1,6 +1,10 @@
 # calculator
 
-A new Flutter project.
+Calculator mobile app. This is a gemel-fund calculator that shows the overall amonut of 
+money in the gamal fund. The calculator calculates with yield, management fee, 
+taxes and inflation (because the taxes are real taxes which take in count the inflation loss).
+
+The app's UI was desigend in Figma on 360 x 640 android device.
 
 ## Getting Started
 
