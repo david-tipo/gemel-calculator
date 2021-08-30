@@ -20,7 +20,6 @@ class Calculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('build main');
     return MaterialApp(
       builder: (context, child) {
         return Directionality(

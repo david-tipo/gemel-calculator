@@ -4,7 +4,6 @@ import '../app_data.dart';
 import './pages/advanced_page.dart';
 import './pages/simple_page.dart';
 import '../widgets/main_drawer.dart';
-import '../app_code/gemel_math.dart';
 
 class TabsScreen extends StatefulWidget {
   @override
@@ -26,7 +25,6 @@ class _TabsScreenState extends State<TabsScreen> {
   /// The right background based on device's screen ratio
   String get _backgroundImageName{
     final double aspectRatio = MediaQuery.of(context).size.aspectRatio;
-    print(aspectRatio);
     if ( aspectRatio > 0.5)
       return "images/wide-background.png";
     else

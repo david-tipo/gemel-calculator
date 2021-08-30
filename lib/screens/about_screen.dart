@@ -25,7 +25,7 @@ class AboutScreen extends StatelessWidget {
   /// Picks the right background based on device's screen ratio
   _setBackgroundImageName(BuildContext context) {
     final double aspectRatio = MediaQuery.of(context).size.aspectRatio;
-    print(aspectRatio);
+
     if (aspectRatio > 0.5)
       _backgroundImageName = "images/wide-background.png";
     else

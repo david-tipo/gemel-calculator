@@ -77,7 +77,7 @@ class _SimplePageState extends State<SimplePage> {
 
   @override
   Widget build(BuildContext context) {
-    print(amountStatus.errorString);
+    (amountStatus.errorString);
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -

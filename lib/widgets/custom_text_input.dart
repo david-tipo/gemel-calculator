@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:bordered_text/bordered_text.dart';
-import '../models/icons.dart';
 
 class CustomTextInput extends StatefulWidget {
   final String title;
@@ -41,7 +40,6 @@ class _CustomTextInputState extends State<CustomTextInput> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget.textFieldHeight);
     return Column(
       children: [
         BorderedText(
