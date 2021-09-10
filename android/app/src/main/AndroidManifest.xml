@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.calculator">
+    package="com.davidtipo.gemel_calculator">
+    <supports-screens android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="false"/>
    <application
         android:label="מחשבון גמל"
         android:icon="@mipmap/ic_launcher">
