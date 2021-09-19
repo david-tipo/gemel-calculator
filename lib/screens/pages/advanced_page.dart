@@ -1,12 +1,12 @@
 import 'package:calculator/widgets/results_rect.dart';
 import 'package:flutter/material.dart';
-import 'package:bordered_text/bordered_text.dart';
 import '../../app_data.dart';
 import '../../widgets/custom_text_input.dart';
 import '../../app_code/gemel_math.dart';
 import '../../models/icons.dart';
 import '../../models/input_valid_status.dart';
 import '../../app_code/input_check.dart';
+import '../../app_code/useful_funcs.dart';
 
 class AdvancedPage extends StatefulWidget {
   @override
@@ -31,13 +31,17 @@ class _AdvancedPageState extends State<AdvancedPage> {
 
   /// The String of amountBeforeTaxes
   String get _getAmountBeforeTaxes {
-    if (amountBeforeTaxes != null) return amountBeforeTaxes.toString();
+    if (amountBeforeTaxes != null) {
+      return UsefulFunc.numberFormStr(amountBeforeTaxes.toString());
+    }
     return '--------';
   }
 
   /// The string of amountAfterTaxes
   String get _getAmountAfterTaxes {
-    if (amountAfterTaxes != null) return amountAfterTaxes.toString();
+    if (amountAfterTaxes != null) {
+      return UsefulFunc.numberFormStr(amountAfterTaxes.toString());
+    }
     return '--------';
   }
 

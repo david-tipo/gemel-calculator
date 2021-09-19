@@ -40,12 +40,14 @@ class ResultsRect extends StatelessWidget {
                 ),
               ),
               SizedBox(height: height / (570 / 4)),
-              Text(
-                totalBeforeTaxes,
-                style: TextStyle(
-                  fontFamily: 'Rubik',
-                  color: Colors.red,
-                  fontSize: width / (360 / 30),
+              FittedBox(
+                child: Text(
+                  totalBeforeTaxes,
+                  style: TextStyle(
+                    fontFamily: 'Rubik',
+                    color: Colors.red,
+                    fontSize: width / (360 / 30),
+                  ),
                 ),
               ),
             ],
@@ -66,12 +68,14 @@ class ResultsRect extends StatelessWidget {
                 ),
               ),
               SizedBox(height: height / (570 / 4)),
-              Text(
-                totalAfterTaxes,
-                style: TextStyle(
-                  fontFamily: 'Rubik',
-                  color: Theme.of(context).primaryColor,
-                  fontSize: width / (360 / 30),
+              FittedBox(
+                child: Text(
+                  totalAfterTaxes,
+                  style: TextStyle(
+                    fontFamily: 'Rubik',
+                    color: Theme.of(context).primaryColor,
+                    fontSize: width / (360 / 30),
+                  ),
                 ),
               ),
             ],

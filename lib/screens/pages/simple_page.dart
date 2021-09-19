@@ -6,6 +6,8 @@ import '../../models/icons.dart';
 import '../../widgets/results_rect.dart';
 import '../../models/input_valid_status.dart';
 import '../../app_code/input_check.dart';
+import '../../app_code/useful_funcs.dart';
+
 
 class SimplePage extends StatefulWidget {
   @override
@@ -26,13 +28,17 @@ class _SimplePageState extends State<SimplePage> {
 
   /// The String of amountBeforeTaxes
   String get _getAmountBeforeTaxes {
-    if (amountBeforeTaxes != null) return amountBeforeTaxes.toString();
+    if (amountBeforeTaxes != null) {
+      return UsefulFunc.numberFormStr(amountBeforeTaxes.toString());
+    }
     return '--------';
   }
 
   /// The string of amountAfterTaxes
   String get _getAmountAfterTaxes {
-    if (amountAfterTaxes != null) return amountAfterTaxes.toString();
+    if (amountAfterTaxes != null) {
+      return UsefulFunc.numberFormStr(amountAfterTaxes.toString());
+    }
     return '--------';
   }
 
@@ -77,7 +83,6 @@ class _SimplePageState extends State<SimplePage> {
 
   @override
   Widget build(BuildContext context) {
-    (amountStatus.errorString);
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
