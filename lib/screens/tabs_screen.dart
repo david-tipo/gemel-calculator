@@ -50,7 +50,6 @@ class _TabsScreenState extends State<TabsScreen> {
           title: FittedBox(
             child: Text(
               _pagesData[_selectedIndex]['title'],
-              // style: TextStyle(color: Colors.white),
             ),
           ),
         ),
@@ -59,7 +58,7 @@ class _TabsScreenState extends State<TabsScreen> {
       body: Container(
         width: double.infinity,
         height: MediaQuery.of(context).size.height - APP_DATA.APPBAR_HEIGHT,
-        // width and height is set as minimum. just in case :)
+        // width & height are set as minimum. just in case :)
         child: _pagesData[_selectedIndex]['page'],
         decoration: BoxDecoration(
           image: DecorationImage(

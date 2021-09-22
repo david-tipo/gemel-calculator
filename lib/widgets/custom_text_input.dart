@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bordered_text/bordered_text.dart';
+import '../app_code/useful_funcs.dart';
 
 class CustomTextInput extends StatefulWidget {
   final String title;
@@ -31,8 +32,14 @@ class _CustomTextInputState extends State<CustomTextInput> {
   /// returns the error text style
   TextStyle get _errorStyle {
     return TextStyle(
-      fontSize: MediaQuery.of(context).size.width / (360 / 10) +
-          widget.textFieldWidth / (MediaQuery.of(context).size.width / 15),
+      fontSize: MediaQuery
+          .of(context)
+          .size
+          .width / (360 / 10) +
+          widget.textFieldWidth / (MediaQuery
+              .of(context)
+              .size
+              .width / 15),
       color: Colors.red,
       backgroundColor: Colors.white.withOpacity(0.8),
     );
