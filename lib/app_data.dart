@@ -1,4 +1,3 @@
-
 class APP_DATA {
 
   /// The height of the appBar in the app

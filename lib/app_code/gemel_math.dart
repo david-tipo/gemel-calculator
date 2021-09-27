@@ -1,10 +1,9 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class GemelMath {
   static const double defaultYield = 4 / 100; //4%
-  static const double defaultMgmtFee = 0.8 / 100; // 0.99%
+  static const double defaultMgmtFee = 0.8 / 100; // 0.8%
   static const double inflation = 2 / 100; // 2%
 
   final double firstAmount;
