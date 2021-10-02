@@ -62,7 +62,10 @@ class _SimplePageState extends State<SimplePage> {
   ///
   /// If user input is not valid, it sets the input vars' status and that displays error message
   void _press() {
-    FocusScope.of(context).unfocus();
+    final FocusScopeNode currentScope = FocusScope.of(context);
+    if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
+      FocusManager.instance.primaryFocus.unfocus();
+    }
     // Closes the keyboard if on. When the button is pressed
     setState(() {
       amountStatus = InputCheck.checkAmount(amountController.text);
