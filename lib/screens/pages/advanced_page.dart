@@ -64,6 +64,14 @@ class _AdvancedPageState extends State<AdvancedPage> {
     });
   }
 
+  void _removeCommas(){
+    amountController.text = UsefulFunc.removeCommas(amountController.text);
+    monthlyAmountController.text = UsefulFunc.removeCommas(monthlyAmountController.text);
+    yearsController.text = UsefulFunc.removeCommas(yearsController.text);
+    // no need to remove commas on yeld and mgmgt_fee because there is no commas
+    // added from the first place
+  }
+
   /// Sets the results based on user input and scrolls to the bottom to show results.
   ///
   /// If user input is not valid, it sets the input vars' status and that displays error message
@@ -72,6 +80,7 @@ class _AdvancedPageState extends State<AdvancedPage> {
     if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
       FocusManager.instance.primaryFocus.unfocus();
     }
+    _removeCommas();
     // Closes the keyboard if on. When the button is pressed
     setState(() {
       amountStatus = InputCheck.checkAmount(amountController.text);
@@ -174,6 +183,7 @@ class _AdvancedPageState extends State<AdvancedPage> {
                 controller: yieldController,
                 iconData: MyFlutterApp.percent_1,
                 errorMessage: yieldStatus.errorString,
+                addCommas: false,
               ),
               CustomTextInput(
                 title: 'דמי ניהול',
@@ -184,6 +194,7 @@ class _AdvancedPageState extends State<AdvancedPage> {
                 controller: mgmtFeeController,
                 iconData: MyFlutterApp.percent_1,
                 errorMessage: mgmtFeeStatus.errorString,
+                addCommas: false,
               ),
             ],
           ),

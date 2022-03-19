@@ -11,6 +11,7 @@ class CustomTextInput extends StatefulWidget {
   final TextEditingController controller;
   final IconData iconData;
   final String errorMessage;
+  final bool addCommas;
 
   CustomTextInput({
     @required this.title,
@@ -20,6 +21,7 @@ class CustomTextInput extends StatefulWidget {
     @required this.spacing,
     @required this.controller,
     @required this.iconData,
+    this.addCommas = true,
     this.errorMessage,
   });
 
@@ -29,17 +31,21 @@ class CustomTextInput extends StatefulWidget {
 
 class _CustomTextInputState extends State<CustomTextInput> {
 
+  _organizeText(){
+    if (widget.addCommas) {
+      widget.controller.text =
+          UsefulFunc.commaString(
+              widget.controller.text); // adds commas to the number
+    }
+    widget.controller.selection = TextSelection.fromPosition(TextPosition(offset: widget.controller.text.length));
+    // always brings the cursor the units number
+  }
+
   /// returns the error text style
   TextStyle get _errorStyle {
     return TextStyle(
-      fontSize: MediaQuery
-          .of(context)
-          .size
-          .width / (360 / 10) +
-          widget.textFieldWidth / (MediaQuery
-              .of(context)
-              .size
-              .width / 15),
+      fontSize: MediaQuery.of(context).size.width / (360 / 10) +
+          widget.textFieldWidth / (MediaQuery.of(context).size.width / 15),
       color: Colors.red,
       backgroundColor: Colors.white.withOpacity(0.8),
     );
@@ -47,6 +53,8 @@ class _CustomTextInputState extends State<CustomTextInput> {
 
   @override
   Widget build(BuildContext context) {
+    _organizeText();
+    //^^ useful when there is an error msg.
     return Column(
       children: [
         BorderedText(
@@ -65,6 +73,9 @@ class _CustomTextInputState extends State<CustomTextInput> {
           height: widget.textFieldHeight, // + _heightBonus,
           child: TextField(
             controller: widget.controller,
+            onChanged: (ctx) {
+              _organizeText();
+            },
             decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),

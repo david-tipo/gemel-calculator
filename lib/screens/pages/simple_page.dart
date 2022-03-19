@@ -56,6 +56,11 @@ class _SimplePageState extends State<SimplePage> {
     });
   }
 
+  void _removeCommas(){
+    amountController.text = UsefulFunc.removeCommas(amountController.text);
+    monthlyAmountController.text = UsefulFunc.removeCommas(monthlyAmountController.text);
+    yearsController.text = UsefulFunc.removeCommas(yearsController.text);
+  }
 
 
   /// Sets the results based on user input and scrolls to the bottom to show results.
@@ -66,6 +71,7 @@ class _SimplePageState extends State<SimplePage> {
     if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
       FocusManager.instance.primaryFocus.unfocus();
     }
+    _removeCommas();
     // Closes the keyboard if on. When the button is pressed
     setState(() {
       amountStatus = InputCheck.checkAmount(amountController.text);
